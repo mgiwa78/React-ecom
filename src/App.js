@@ -1,23 +1,16 @@
 import "./App.css";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 import Homepage from "./pages/homepage/home-page.component";
-
-const HatsPage = () => (
-  <div>
-    <h1>Hats Page</h1>
-  </div>
-);
+import ShopPage from "./pages/shop/shop.component";
 
 function App() {
   return (
     <div>
-      <Route path="/hat">
-        <HatsPage />
-      </Route>
-      <Route path="/">
-        <Homepage />
-      </Route>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/shop" element={<ShopPage />} />
+      </Routes>
     </div>
   );
 }
