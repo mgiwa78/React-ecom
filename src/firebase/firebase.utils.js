@@ -14,9 +14,10 @@ const config = {
   measurementId: "G-1VYDMRF2T1",
 };
 
-const authen = getAuth(firebase.initializeApp(config));
+export const authen = getAuth(firebase.initializeApp(config));
 
 const provider = new auth.GoogleAuthProvider();
+
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => {
   auth
