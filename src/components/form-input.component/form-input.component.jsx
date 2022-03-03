@@ -12,7 +12,6 @@ const FormInput = ({ handlechange, label, ...otherProps }) => (
         {label}
       </label>
     ) : null}
-    {console.log(label, handlechange, otherProps)}
   </div>
 );
 

@@ -1,9 +1,7 @@
-import * as firebase from "firebase/app";
-import * as auth from "firebase/auth";
-import * as firestore from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import "firebase/compat/auth";
 
-console.log(auth);
 const config = {
   apiKey: "AIzaSyAHS41gvS7XrqqptSG-63_8o89U7B7ahdo",
   authDomain: "crn-db-app.firebaseapp.com",
@@ -14,26 +12,37 @@ const config = {
   measurementId: "G-1VYDMRF2T1",
 };
 
-export const createUserProfileDocument = async (userAuth, additioanalData) => {
-  if (!userAuth) return;
+// export const createUserProfileDocument = async (userAuth, additioanalData) => {
+//   if (!userAuth) return;
 
-  console.log(firestore.doc(firestore, "users/segff23t22"));
-};
+//   console.log(firestore.doc(firestore, "users/segff23t22"));
+// };
 
-export const authen = getAuth(firebase.initializeApp(config));
+// export const authen = getAuth(firebase.initializeApp(config));
 
-const provider = new auth.GoogleAuthProvider();
+// const provider = new auth.GoogleAuthProvider();
 
+// provider.setCustomParameters({ prompt: "select_account" });
+// export const signInWithGoogle = () => {
+//   auth
+//     .signInWithPopup(authen, provider)
+//     .then((re) => {
+//       console.log(re);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
+
+// export default firebase;
+
+firebase.initializeApp(config);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
-export const signInWithGoogle = () => {
-  auth
-    .signInWithPopup(authen, provider)
-    .then((re) => {
-      console.log(re);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
