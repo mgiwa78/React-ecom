@@ -32,11 +32,9 @@ export class SignUp extends React.Component {
         password
       );
 
-      console.log("user", user);
-
       await createUserProfileDocument(user, displayName);
 
-      this.setstate({
+      this.setState({
         displayName: "",
         email: "",
         password: "",
