@@ -58,7 +58,7 @@ export default class SignIn extends Component {
             label="Password"
           />
           <div className="buttons">
-            <CustonButton type="button" value="Submit Form">
+            <CustonButton type="submit" value="Submit Form">
               Sign In
             </CustonButton>
             <CustonButton
