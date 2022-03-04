@@ -58,10 +58,14 @@ export default class SignIn extends Component {
             label="Password"
           />
           <div className="buttons">
-            <CustonButton type="submit" value="Submit Form">
+            <CustonButton type="button" value="Submit Form">
               Sign In
             </CustonButton>
-            <CustonButton onClick={signInWithGoogle} isGoogleSignIn={true}>
+            <CustonButton
+              type="button"
+              onClick={signInWithGoogle}
+              isGoogleSignIn={true}
+            >
               Sign In WIth Google
             </CustonButton>
           </div>
