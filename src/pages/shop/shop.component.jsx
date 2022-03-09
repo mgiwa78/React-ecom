@@ -8,8 +8,8 @@ import CollectionPage from "../collection/collection.component";
 import CollectionsOverview from "../../components/collections-overview/collections-overview.component";
 
 const ShopPage = (props, { match }) => {
-  const param = useParams;
-  const { collectionId } = param;
+  const param = useParams();
+  const loc = useLocation();
 
   return (
     <div className="shop-page">
@@ -18,7 +18,7 @@ const ShopPage = (props, { match }) => {
         <Route
           exact
           path={`/:collectionId`}
-          element={<CollectionPage param={param} />}
+          element={<CollectionPage param={param} loc={loc} />}
         />
       </Routes>
     </div>
